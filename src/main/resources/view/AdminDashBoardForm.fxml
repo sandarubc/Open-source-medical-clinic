@@ -1,16 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep9.clinic.controller.AdminDashBoardFoarmController">
+<AnchorPane prefHeight="473.0" prefWidth="718.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep9.clinic.controller.AdminDashBoardFoarmController">
    <children>
-      <Label layoutX="49.0" layoutY="160.0" text="Admin Dash Board">
+      <Label layoutX="14.0" layoutY="26.0" text="MEDICARE CHANNELING CENTRE">
          <font>
-            <Font size="57.0" />
+            <Font name="Cantarell Extra Bold" size="30.0" />
          </font>
       </Label>
+      <ImageView fitHeight="88.0" fitWidth="69.0" layoutX="618.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/MediCare.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="256.0" layoutY="87.0" text="Adminstrator">
+         <font>
+            <Font name="Cantarell Extra Bold" size="33.0" />
+         </font>
+      </Label>
+      <JFXButton buttonType="RAISED" layoutX="273.0" layoutY="153.0" style="-fx-background-color: #2060ff;" text="Profile Managment" textFill="WHITE">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="274.0" layoutY="224.0" prefHeight="39.0" prefWidth="218.0" style="-fx-background-color: #2060ff;" text="View Records" textFill="WHITE">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="274.0" layoutY="294.0" prefHeight="45.0" prefWidth="218.0" style="-fx-background-color: #2060ff;" text="Settings" textFill="WHITE">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
+import lk.ijse.dep9.clinic.misc.CryptoUtil;
 import lk.ijse.dep9.clinic.security.SecurityContextHolder;
 import lk.ijse.dep9.clinic.security.User;
 import lk.ijse.dep9.clinic.security.UserRole;
@@ -71,14 +72,32 @@ public class LoginFormController {
 
 
 
-            //String sql = String.format("SELECT role FROM User WHERE username='%s' AND password='%s';", userName, password);
-            String sql="SELECT role FROM User WHERE username=? AND password=?;";
+//            String sql="SELECT role FROM User WHERE username=? AND password=?;";
+//            PreparedStatement sta = connection.prepareStatement(sql);
+//            sta.setString(1,userName);
+//            sta.setString(2,password);
+//            Statement statement = connection.createStatement();
+//            ResultSet resultSet = sta.executeQuery();
+
+
+            String sql="SELECT password,role FROM User WHERE username=?;";
             PreparedStatement sta = connection.prepareStatement(sql);
             sta.setString(1,userName);
-            sta.setString(2,password);
-            //Statement statement = connection.createStatement();
             ResultSet resultSet = sta.executeQuery();
+
+
+
+
             if(resultSet.next()){
+                String ciperText=resultSet.getString("password");
+                System.out.println(CryptoUtil.sha256String(password));
+                boolean equals = CryptoUtil.sha256String(password).equals(ciperText);
+                if(!equals){
+                    new Alert(Alert.AlertType.ERROR,"Password is Wrong!").show();
+                    txtPassword.requestFocus();
+                    txtPassword.selectAll();
+                    return;
+                }
 
                 String role = resultSet.getString("role");
                 User user = new User(userName, password, UserRole.valueOf(role));
