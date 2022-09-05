@@ -24,17 +24,17 @@
             <Font name="Cantarell Extra Bold" size="33.0" />
          </font>
       </Label>
-      <JFXButton buttonType="RAISED" layoutX="273.0" layoutY="153.0" style="-fx-background-color: #2060ff;" text="Profile Managment" textFill="WHITE">
+      <JFXButton fx:id="btnProfileManagment" buttonType="RAISED" layoutX="273.0" layoutY="153.0" onAction="#btnProfileManagmentOnAction" style="-fx-background-color: #2060ff;" text="Profile Managment" textFill="WHITE">
          <font>
             <Font size="21.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="274.0" layoutY="224.0" prefHeight="39.0" prefWidth="218.0" style="-fx-background-color: #2060ff;" text="View Records" textFill="WHITE">
+      <JFXButton fx:id="btnViewRecords" buttonType="RAISED" layoutX="274.0" layoutY="224.0" onAction="#btnViewRecordsOnAction" prefHeight="39.0" prefWidth="218.0" style="-fx-background-color: #2060ff;" text="View Records" textFill="WHITE">
          <font>
             <Font size="21.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="274.0" layoutY="294.0" prefHeight="45.0" prefWidth="218.0" style="-fx-background-color: #2060ff;" text="Settings" textFill="WHITE">
+      <JFXButton fx:id="btnSettings" buttonType="RAISED" layoutX="274.0" layoutY="294.0" onAction="#btnSettingsOnAction" prefHeight="45.0" prefWidth="218.0" style="-fx-background-color: #2060ff;" text="Settings" textFill="WHITE">
          <font>
             <Font size="21.0" />
          </font>
